@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+              <!-- Hojas de estilo -->
+            <!-- direccion de -->
+            <link rel="stylesheet" href="css/lungo.css">
+            <link rel="stylesheet" href="css/lungo.icon.css">
+            <link rel="stylesheet" href="css/lungo.theme.css">
+            <link rel="stylesheet" type="text/css" href="css/index.css">
+            <link rel="stylesheet" href="css/hoja.css">
+
+        <!-- Script -->
+            <script src="js/quo.js"></script>
+            <script src="js/lungo.js"></script>
+        <title></title>
+    </head>
+    <body>
+            <section id="main">
+    <!--     <header data-title="S A U D E" class="extended"></header> --><article class="activo">
+             
+         <img id="ima" src="./img/sauv2.png" class="centrar" />
+               
+           </article>
+
+              
+            </section>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            Lungo.init({
+            name: 'hello-world',
+           resources:['sec2.html','sec3.html','sec4.html','sec5.html','sec7.html','sec8.html','sec9.html','secc1.html','secc2.html']
+        });
+            // codigo para manejar el click
+                Lungo.dom('#ima').on('click',function(event){
+                    Lungo.Router.section("sec2");   
+                });
+                Lungo.dom('#midete').on('click',function(event){
+                    Lungo.Router.section("sec3");   
+                });
+                Lungo.dom('#mujer').on('click',function(event){
+                    Lungo.Router.section("sec4");   
+                });
+                Lungo.dom('#hombre').on('click',function(event){
+                    Lungo.Router.section("sec5");   
+                });
+                Lungo.dom('#tips').on('click',function(event){
+                    Lungo.Router.section("secc1");   
+                });
+                 Lungo.dom('#ejercicio').on('click',function(event){
+                    Lungo.Router.section("ejer");   
+                });
+                 Lungo.dom('#nosotros').on('click',function(event){
+                    Lungo.Router.section("sec8"); 
+                });
+                 Lungo.dom('#cole').on('click',function(event){
+                    Lungo.Router.section("cole");   
+                });
+                  Lungo.dom('#coli').on('click',function(event){
+                    Lungo.Router.section("coli");   
+                });
+                   Lungo.dom('#dia').on('click',function(event){
+                    Lungo.Router.section("dia");   
+                });
+                   Lungo.dom('#estre').on('click',function(event){
+                    Lungo.Router.section("estre");   
+                });
+                    Lungo.dom('#gas').on('click',function(event){
+                    Lungo.Router.section("gas");   
+                });
+                    Lungo.dom('#hip').on('click',function(event){
+                    Lungo.Router.section("hip");   
+                });
+                    Lungo.dom('#tri').on('click',function(event){
+                    Lungo.Router.section("tri");   
+                });
+
+                    Lungo.dom('#sec4').on('unload',function(event){
+                    $$("#estatura").val("");
+                    $$("#peso").val("");
+                    $$("#imc").val("");
+                    $$("#pti").val("");
+                    $$("#cal").val("");
+                    $$("#baja").val("");
+                });
+                    Lungo.dom('#sec5').on('unload',function(event){
+                    $$("#est").val("");
+                    $$("#pes").val("");
+                    $$("#im").val("");
+                    $$("#pt").val("");
+                    $$("#ca").val("");
+                    $$("#ba").val("");
+                });
+                    Lungo.dom('#calculo').on('click',function(event){
+                        var estatura= $$('#estatura').val();
+                        var peso=$$('#peso').val();
+                        var x=estatura*estatura;
+                        var imc_c=parseFloat(peso/x).toFixed(2);
+                        $$('#imc').val(imc_c.toString());
+                        var pti=parseFloat(x*21.5).toFixed(2);
+                        $$('#pti').val(pti.toString());
+
+                        if (imc_c<=25) {
+                            cal=pti*30;
+                        }
+                        else if(imc_c<=30){
+                            cal=pti*25;   
+                        }
+                        else if(imc_c<=35){
+                            cal=pti*30;
+                        }
+                        else if(imc_c<=40){
+                            cal=pti*30;  
+                        }
+                        $$('#cal').val(cal.toString());
+                        var baja=parseFloat(peso-pti).toFixed(2);
+                        $$('#baja').val(baja.toString());
+                      
+                      
+                });
+                    Lungo.dom('#calcu').on('click',function(event){
+                        var est= $$('#est').val();
+                        var pes=$$('#pes').val();
+                        var x=est*est;
+                        var im_a=parseFloat(pes/x).toFixed(2);
+                        $$('#im').val(im_a.toString());
+                        var pt=parseFloat(x*23).toFixed(2);
+                        $$('#pt').val(pt.toString());
+
+                        if (im_a<=25) {
+                            ca=pt*30;
+                        }
+                        else if(im_a<=30){
+                            ca=pt*25;   
+                        }
+                        else if(im_a<=35){
+                            ca=pt*30;
+                        }
+                        else if(im_a<=40){
+                            ca=pt*30;  
+                        }
+                        $$('#ca').val(ca.toString());
+                         var ba=parseFloat(pes-pt).toFixed(2);
+                        $$('#ba').val(ba.toString());
+                });
+        </script>
+    </body>
+</html>
